@@ -1,4 +1,4 @@
-module github.com/linbeier/authsys
+module github.com/linbeier/authsysibc
 
 go 1.13
 
