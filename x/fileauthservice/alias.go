@@ -1,8 +1,8 @@
 package fileauthservice
 
 import (
-	"github.com/linbeier/authsys/x/fileauthservice/internal/keeper"
-	"github.com/linbeier/authsys/x/fileauthservice/internal/types"
+	"github.com/linbeier/authsysibc/x/fileauthservice/internal/keeper"
+	"github.com/linbeier/authsysibc/x/fileauthservice/internal/types"
 )
 
 const (

@@ -16,7 +16,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/codec"
 
-	"github.com/linbeier/authsys/x/fileauthservice/internal/types"
+	"github.com/linbeier/authsysibc/x/fileauthservice/internal/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module
@@ -83,7 +83,7 @@ func GetCmdGetFiles(queryRoute string, cdc *codec.Codec) *cobra.Command {
 
 			var out []string
 			cdc.MustUnmarshalJSON(res, &out)
-			// fptest, _ := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsys/testtime.txt", os.O_APPEND, 0666)
+			// fptest, _ := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsysibc/testtime.txt", os.O_APPEND, 0666)
 			// fptest.Write(fmt.Sprintf("查询权限信息所使用时间为：%v\n", time.Since(timestart)))
 			// defer fptest.Close()
 			filepath := "./testtime"
@@ -158,7 +158,7 @@ func GetCmdGetTrace(queryRoute string, cdc *codec.Codec) *cobra.Command {
 			cliCtx := context.NewCLIContext().WithCodec(cdc)
 			account := args[0]
 			filename := args[1]
-			fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+			fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 			if err0 != nil {
 				fmt.Printf("%s", err0)
 			}
@@ -211,7 +211,7 @@ func GetCmdGetTrace(queryRoute string, cdc *codec.Codec) *cobra.Command {
 			}
 
 			// fmt.Printf("fortest fortest\n")
-			// fptest, _ := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsys/testtime.txt", os.O_APPEND, 0666)
+			// fptest, _ := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsysibc/testtime.txt", os.O_APPEND, 0666)
 			// fptest.Write(fmt.Sprintf("查询权限信息所使用时间为：%v\n", time.Since(timestart)))
 			// fptest.Close()
 			filepath := "./testtime"

@@ -12,7 +12,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/linbeier/authsys/x/fileauthservice/internal/types"
+	"github.com/linbeier/authsysibc/x/fileauthservice/internal/types"
 )
 
 const (
@@ -86,7 +86,7 @@ func queryAccount(ctx sdk.Context, req abci.RequestQuery, k Keeper) ([]byte, err
 //querytype/account->
 func queryFile(ctx sdk.Context, path []string, req abci.RequestQuery, k Keeper) ([]byte, error) {
 
-	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 	if err0 != nil {
 		fmt.Printf("%s", err0)
 	}
@@ -127,7 +127,7 @@ func queryFile(ctx sdk.Context, path []string, req abci.RequestQuery, k Keeper) 
 //querytype/account/filename/filehash->
 func queryAuth(ctx sdk.Context, path []string, req abci.RequestQuery, k Keeper) ([]byte, error) {
 
-	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 	if err0 != nil {
 		fmt.Printf("%s", err0)
 	}
@@ -167,7 +167,7 @@ func queryAll(ctx sdk.Context, req abci.RequestQuery, k Keeper) ([]byte, error) 
 }
 
 func queryRecord(ctx sdk.Context, path []string, req abci.RequestQuery, k Keeper) ([]byte, error) {
-	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 	if err0 != nil {
 		fmt.Printf("%s", err0)
 	}
@@ -197,7 +197,7 @@ func queryRecord(ctx sdk.Context, path []string, req abci.RequestQuery, k Keeper
 }
 
 func queryTraceRecord(ctx sdk.Context, path []string, req abci.RequestQuery, k Keeper) ([]byte, error) {
-	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+	fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 	if err0 != nil {
 		fmt.Printf("%s", err0)
 	}

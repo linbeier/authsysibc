@@ -9,7 +9,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/linbeier/authsys/x/fileauthservice/internal/types"
+	"github.com/linbeier/authsysibc/x/fileauthservice/internal/types"
 )
 
 //介于现在时间比较短，先把底层存储按账户-权限集数组的方式来存储。之后希望能够重构为账户-文件map的形式，一可以方便查询，二可以避免重复造轮子

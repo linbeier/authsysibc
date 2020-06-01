@@ -17,7 +17,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth"
 	utils "github.com/cosmos/cosmos-sdk/x/auth/client"
-	"github.com/linbeier/authsys/x/fileauthservice/internal/types"
+	"github.com/linbeier/authsysibc/x/fileauthservice/internal/types"
 )
 
 // GetTxCmd returns the transaction commands for this module
@@ -83,7 +83,7 @@ func GetCmdSetFiles(cdc *codec.Codec) *cobra.Command {
 			if err != nil {
 				return err
 			}
-			fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+			fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 			if err0 != nil {
 				fmt.Printf("%s", err0)
 			}
@@ -104,7 +104,7 @@ func GetCmdSetFiles(cdc *codec.Codec) *cobra.Command {
 
 			keymapbyte = cdc.MustMarshalJSON(keymap)
 			//清空文件，并写入新的map
-			os.Truncate("/home/lin/go/src/github.com/linbeier/authsys/data.json", 0)
+			os.Truncate("/home/lin/go/src/github.com/linbeier/authsysibc/data.json", 0)
 			fp.Seek(0, 0)
 
 			_, err0 = fp.Write(keymapbyte)
@@ -112,7 +112,7 @@ func GetCmdSetFiles(cdc *codec.Codec) *cobra.Command {
 				fmt.Printf("%s", err0)
 			}
 
-			// fptest, err2 := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsys/testtime", os.O_APPEND, 0666)
+			// fptest, err2 := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsysibc/testtime", os.O_APPEND, 0666)
 			// if err2 != nil {
 			// 	fmt.Printf("%s\n", err2)
 			// }
@@ -149,7 +149,7 @@ func GetCmdTransFiles(cdc *codec.Codec) *cobra.Command {
 
 			txBldr := auth.NewTxBuilderFromCLI(inBuf).WithTxEncoder(utils.GetTxEncoder(cdc))
 
-			fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsys/data.json"), os.O_CREATE|os.O_RDWR, 0755)
+			fp, err0 := os.OpenFile(fmt.Sprintf("/home/lin/go/src/github.com/linbeier/authsysibc/data.json"), os.O_CREATE|os.O_RDWR, 0755)
 			if err0 != nil {
 				fmt.Printf("%s", err0)
 			}
@@ -180,7 +180,7 @@ func GetCmdTransFiles(cdc *codec.Codec) *cobra.Command {
 				return err
 			}
 
-			// fptest, err2 := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsys/testtime", os.O_APPEND, 0666)
+			// fptest, err2 := os.OpenFile("/home/lin/go/src/github.com/linbeier/authsysibc/testtime", os.O_APPEND, 0666)
 			// if err2 != nil {
 			// 	fmt.Printf("%s", err0)
 			// }
